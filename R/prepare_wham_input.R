@@ -387,6 +387,10 @@ prepare_wham_input <- function(asap3 = NULL, model_name="WHAM for unnamed stock"
 	input = set_q(input, q_opts)
 	#print("q")
 
+	#in case we want to add alternative F options
+	input = set_F(input, F_opts)
+	#print("F")	
+	
 	# Selectivity
 	input = set_selectivity(input, selectivity)
 	#print("selectivity")
@@ -394,10 +398,6 @@ prepare_wham_input <- function(asap3 = NULL, model_name="WHAM for unnamed stock"
 	# Age composition model
 	input = set_age_comp(input, age_comp)
 	#print("age_comp")
-
-	#in case we want to add alternative F options
-	input = set_F(input, F_opts)
-	#print("F")
 
 	#set up natural mortality
 	input = set_M(input, M)
